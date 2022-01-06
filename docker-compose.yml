@@ -1,12 +1,14 @@
 version: "3.8"
 
 services:
-  datascience-off:
-    image: jupyter/datascience-notebook:latest
+  datascience-cus:
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
       - JUPYTER_TOKEN=sai1@ram2
     volumes:
       - ./:/home/jovyan/work
     ports:
       - 8888:8888
-    container_name: datascience-off
+    container_name: datascience-cus
